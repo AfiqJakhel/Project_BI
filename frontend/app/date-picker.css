@@ -1,0 +1,102 @@
+/* Override react-day-picker agar sesuai Claude Design System Araw Film */
+.rdp-root, .rdp {
+  --rdp-accent-color: var(--color-primary);           /* coral #cc785c */
+  --rdp-background-color: var(--color-surface-card);  /* cream #efe9de */
+  --rdp-accent-background-color: var(--color-primary); /* v10 selected background */
+  --rdp-accent-color-dark: var(--color-primary-active); /* #a9583e */
+  --rdp-outline: 2px solid var(--color-primary);
+  --rdp-outline-selected: 2px solid var(--color-primary-active);
+  --rdp-day-height: 36px;
+  --rdp-day-width: 36px;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+/* Container calendar */
+.rdp-root, .rdp {
+  background: var(--color-canvas);       /* #faf9f5 cream */
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-lg);
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(20, 20, 19, 0.10);
+}
+
+/* Header bulan + tahun */
+.rdp-caption_label, .rdp-month_caption {
+  font-family: var(--font-display) !important;      /* Cormorant Garamond serif */
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  color: var(--color-ink) !important;
+  letter-spacing: -0.3px;
+}
+
+/* Tombol navigasi < > */
+.rdp-nav_button, .rdp-nav button {
+  color: var(--color-muted);
+  border-radius: var(--rounded-md);
+  transition: background 0.15s, color 0.15s;
+}
+.rdp-nav_button:hover, .rdp-nav button:hover {
+  background: var(--color-surface-card);
+  color: var(--color-primary);
+}
+
+/* Label hari (Su Mo Tu We...) */
+.rdp-head_cell, .rdp-weekday {
+  font-family: var(--font-body) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--color-muted) !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Setiap cell tanggal */
+.rdp-day, .rdp-day_button {
+  font-family: var(--font-body) !important;
+  font-size: 14px !important;
+  color: var(--color-body);
+  border-radius: var(--rounded-md) !important;
+  transition: background 0.15s, color 0.15s;
+  width: 36px;
+  height: 36px;
+}
+
+.rdp-day:hover:not(.rdp-day_selected):not(.rdp-selected):not(.rdp-day_outside):not(.rdp-outside),
+.rdp-day_button:hover:not(.rdp-day_selected):not(.rdp-selected):not(.rdp-day_outside):not(.rdp-outside) {
+  background-color: var(--color-surface-card) !important;  /* cream hover */
+  color: var(--color-ink) !important;
+}
+
+/* Tanggal dipilih (start & end) */
+.rdp-day_selected, .rdp-selected,
+.rdp-day_selected:hover, .rdp-selected:hover {
+  background-color: var(--color-primary) !important;  /* coral */
+  color: var(--color-on-primary) !important;    /* white */
+  border-radius: var(--rounded-md) !important;
+  font-weight: 500 !important;
+}
+
+/* Range di antara start dan end */
+.rdp-day_range_middle, .rdp-range_middle {
+  background-color: var(--color-surface-card) !important;
+  color: var(--color-primary) !important;
+  border-radius: 0 !important;
+}
+
+/* Tanggal di luar bulan ini */
+.rdp-day_outside, .rdp-outside {
+  color: var(--color-muted-soft) !important;
+  opacity: 0.5;
+}
+
+/* Tanggal hari ini — underline coral, bukan background */
+.rdp-day_today:not(.rdp-day_selected):not(.rdp-selected),
+.rdp-today:not(.rdp-day_selected):not(.rdp-selected) {
+  font-weight: 600 !important;
+  color: var(--color-primary) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  background-color: transparent !important;
+}
