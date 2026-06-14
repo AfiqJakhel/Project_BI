@@ -4,6 +4,9 @@
 -- Database: araw_film
 -- ============================================================
 
+-- Bersihkan tabel usang jika sebelumnya pernah ada
+DROP TABLE IF EXISTS Dim_Channel;
+
 -- ============================================================
 -- DIMENSION TABLES
 -- ============================================================
@@ -40,7 +43,9 @@ CREATE TABLE IF NOT EXISTS Dim_Supplier (
     nama_supplier   VARCHAR(150)    NOT NULL,
     tipe_supplier   VARCHAR(50)     NULL,
     status_aktif    BOOLEAN         NOT NULL DEFAULT TRUE,
-    PRIMARY KEY (supplier_id),
+    PRIMARY KEY (supplier_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- Dim_KategoriBiaya
 CREATE TABLE IF NOT EXISTS Dim_KategoriBiaya (
     kategori_biaya_id INT           NOT NULL AUTO_INCREMENT,

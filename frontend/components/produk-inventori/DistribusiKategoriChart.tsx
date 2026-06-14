@@ -72,7 +72,7 @@ export function DistribusiKategoriChart() {
               <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="var(--color-hairline)" opacity={0.5} />
               <XAxis type="number" tickFormatter={formatRpPendek} fontSize={11} tick={{ fill: 'var(--color-body)' }} />
               <YAxis dataKey="kategori" type="category" width={90} fontSize={11} tick={{ fill: 'var(--color-body)' }} />
-              <Tooltip formatter={(value: number) => formatRp(value)} />
+              <Tooltip formatter={(value: any) => formatRp(Number(value))} />
               <Bar dataKey="nilai_inventori" radius={[0, 4, 4, 0]}>
                 {barData.map((entry: any, index: number) => {
                   const originalIndex = data.findIndex((d: any) => d.kategori === entry.kategori)
